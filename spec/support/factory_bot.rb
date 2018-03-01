@@ -7,4 +7,7 @@ FactoryBot.define do
     password_confirmation 'password'
   end
 
+  factory :prompt do
+    prompt_content "Name two things you are really good at..."
+  end
 end
