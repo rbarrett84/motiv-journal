@@ -7,13 +7,14 @@ class NewFormContainer extends Component {
     super(props)
     this.state = {
       formBody: 'Type your response here',
-      prompt: ''
+      prompt: {}
     }
     this.handleEntryChange = this.handleEntryChange.bind(this)
     this.handleEntrySubmit = this.handleEntrySubmit.bind(this)
   }
 
   fetchRandomPrompt() {
+    //Could be solved through routes.  Look at superpower project.  Or could in the fetchRandomPrompt set prompt to teh instance variable that you assign in the entries controller.  Under the new method.
     const PROMPTS = [
       "List Five things you are grateful for...",
       "What was the last positive thing you were a part of?",
@@ -36,19 +37,19 @@ class NewFormContainer extends Component {
   }
 
   addNewEntry(formPayload) {
-    fetch(`/api/v1/entries`, {
-      credentials: 'same-origin',
-      header: {
-       'Content-Type': 'application/json',
-       'X-Requested-With': 'XMLHttpRequest'
-      },
-      method: 'POST',
-      body: JSON.stringify(formPayload)
-    })
-    .then(response => response.json())
-    .then(body => {
-      this.setState({entries: entry.response})
-    })
+  //   fetch(`/entries`, {
+  //     credentials: 'same-origin',
+  //     header: {
+  //      'Content-Type': 'application/json',
+  //      'X-Requested-With': 'XMLHttpRequest'
+  //     },
+  //     method: 'POST',
+  //     body: JSON.stringify(formPayload)
+  //   })
+  //   .then(response => response.json())
+  //   .then(body => {
+  //     this.setState({entries: entry.response})
+  //   })
   }
 
   handleEntrySubmit(event){
