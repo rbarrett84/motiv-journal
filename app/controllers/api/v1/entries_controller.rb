@@ -1,4 +1,11 @@
-class Api::V1::SuperpowersController < ApiController
-  def index
-    render json: Entry.all
+class Api::V1::EntriesController < ApplicationController
+  def new
+    render json: (random_prompt(Prompt.all))
   end
+
+  private
+
+  def random_prompt(prompts)
+    return prompts.sample
+  end
+end

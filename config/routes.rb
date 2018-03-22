@@ -3,5 +3,10 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :entries
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  namespace :api do
+    namespace :v1 do
+      resources :entries, only: [:new] 
+    end
+  end
 end

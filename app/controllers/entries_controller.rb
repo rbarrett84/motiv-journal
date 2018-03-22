@@ -6,25 +6,23 @@ class EntriesController < ApplicationController
   end
 
   def new
-    @prompt = Prompt.all.rand
   end
 
   def create
-     # = Superpower.find(params[:superpower_id])
+
     parsed_entry = JSON.parse(request.body.read)
-    entry = Entry.new(response: parsed_entry["response"], prompt_id: parsed_entry[prompt_id])
+    entry = Entry.new(response: parsed_entry["response"])
+    entry.prompt = parsed_entry["prompt"]
     entry.user = current_user
-    # entry.superpower = superpower
 
     if current_user.nil?
       render status: 401
     elsif entry.save
       flash[:notice] = 'Entry Added Successfully'
-      redirect_to: entries_path
+      redirect_to entries_path
     else
       flash[:alert] = entry.errors.full_messages.join(", ")
     end
-
   end
 
   private
