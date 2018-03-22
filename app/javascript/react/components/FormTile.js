@@ -7,6 +7,7 @@ const FormField = (props) => {
         type='text'
         onChange={props.handleChange}
         value={props.content}
+        placeholder = "Type your response"
       />
     </label>
   );

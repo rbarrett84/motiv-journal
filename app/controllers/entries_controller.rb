@@ -6,7 +6,23 @@ class EntriesController < ApplicationController
   end
 
   def new
-    new_entry_path
+  end
+
+  def create
+
+    parsed_entry = JSON.parse(request.body.read)
+    entry = Entry.new(response: parsed_entry["response"])
+    entry.prompt = parsed_entry["prompt"]
+    entry.user = current_user
+
+    if current_user.nil?
+      render status: 401
+    elsif entry.save
+      flash[:notice] = 'Entry Added Successfully'
+      redirect_to entries_path
+    else
+      flash[:alert] = entry.errors.full_messages.join(", ")
+    end
   end
 
   private
@@ -15,21 +31,5 @@ class EntriesController < ApplicationController
     if !user_signed_in?
       redirect_to new_user_registration_path
     end
-  end
-
-  def random_prompt
-    prompts = [
-      "List Five things you are grateful for...",
-      "What was the last positive thing you were a part of?",
-      "Write about the last compliment you received...",
-      "My perfect day looks like …",
-      "What is a really unique quality you have?",
-      "When was the last time you were a badass?",
-      "Give yourself a pep talk your best-friend would give you on a bad day?",
-      "Name two things you are really good at…",
-      "Reframe one negative thing that happened today?",
-      "Look back at a bad event in your life and write about a positive consequence of that event..."
-    ]
-    prompts.sample
   end
 end
