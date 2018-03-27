@@ -66,7 +66,7 @@ class NewFormContainer extends Component {
     return(
     <div>
       <h1>{this.state.promptText}</h1>
-      <form className="new-review-form panel" onSubmit={this.handleEntrySubmit}>
+      <form className="new-review-form-panel" onSubmit={this.handleEntrySubmit}>
         <fieldset>
           <div className="formFun"></div>
           <FormField

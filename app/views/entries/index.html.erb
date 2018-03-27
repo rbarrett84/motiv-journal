@@ -1,8 +1,8 @@
-<h1>Entries</h1>
+<h1 class="entry-title">Entries</h1>
 <ul><% @entries.each do |entry| %></ul>
   <li>
-  <h1> <%= entry.prompt.prompt_content %> </h1>
-  <h2> <%= entry.response %> </h2>
+  <h1 class="entry-prompt"> <%= entry.prompt.prompt_content %> </h1>
+  <h2 class="entry-response"> <%= entry.response %> </h2>
 </li>
 <ul><% end %></ul>
-<h3><%= link_to 'New Entry Form', new_entry_path %></h3>
+<h3 class="link"><%= link_to 'New Entry Form', new_entry_path %></h3>

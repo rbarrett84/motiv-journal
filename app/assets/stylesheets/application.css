@@ -1,17 +1,52 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- *= require foundation_and_overrides
+.top-bar {
+  background-color: #F8FFE5
 
- */
+}
+
+.name {
+  font-family: 'Montserrat', sans-serif;
+  color: #1B9AAA;
+  font-size: 40px;
+  text-align: center;
+}
+
+.entry-title {
+  color: #1B9AAA;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 50px;
+  background-color: #F8FFE5;
+
+}
+
+.entry-prompt {
+  background-color: #F8FFE5;
+  color: #1B9AAA;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.entry-response {
+  background-color: #F8FFE5;
+  color: #06D6A0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.link {
+  background-color: #F8FFE5;
+  color: #EF476F;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* .new-review-form-panel {
+  background-color: #1B9AAA;
+} */
