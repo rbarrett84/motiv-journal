@@ -1,5 +1,6 @@
 class EntriesController < ApplicationController
   before_action :authorize_user?
+  skip_before_action :verify_authenticity_token
 
   def index
     @entries = Entry.all
@@ -12,7 +13,8 @@ class EntriesController < ApplicationController
 
     parsed_entry = JSON.parse(request.body.read)
     entry = Entry.new(response: parsed_entry["response"])
-    entry.prompt = parsed_entry["prompt"]
+    prompt = Prompt.find(parsed_entry["promptId"])
+    entry.prompt = prompt
     entry.user = current_user
 
     if current_user.nil?
