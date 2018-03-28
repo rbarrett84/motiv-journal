@@ -6,7 +6,7 @@ class NewFormContainer extends Component {
     super(props)
     this.state = {
       formBody: '',
-      prompt: {},
+      promptId: null,
       promptText: ""
     }
     this.handleEntryChange = this.handleEntryChange.bind(this)
@@ -21,7 +21,7 @@ class NewFormContainer extends Component {
         } else {console.log("There is an error with the path")}
       }) .then(body => {
         this.setState({
-          prompt: body,
+          promptId: body.id,
           promptText: body.prompt_content
         })
       })
@@ -43,13 +43,18 @@ class NewFormContainer extends Component {
       method: 'POST',
       body: JSON.stringify(formPayload)
     })
+    .then(response => {
+      if (response.redirected){
+        window.location.href = response.url
+      }
+    })
   }
 
   handleEntrySubmit(event){
     event.preventDefault()
     let formPayload = {
       response: this.state.formBody,
-      prompt: this.state.prompt
+      promptId: this.state.promptId
     }
     console.log(formPayload)
     this.addNewEntry(formPayload)
