@@ -10,13 +10,18 @@
   text-align: center;
 }
 
-.entry-title {
+.title-area {
   color: #1B9AAA;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
   font-size: 50px;
   background-color: #F8FFE5;
+  margin-top: 12px;
+}
 
+.title-area a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .entry-prompt {
@@ -35,6 +40,16 @@
   background-color: #F8FFE5;
   color: #EF476F;
   font-family: 'Montserrat', sans-serif;
+}
+
+.top-bar-section {
+  position: fixed;
+  width: 100%;
+}
+
+.right {
+  float: right;
+  margin-right: 30px;
 }
 
 
