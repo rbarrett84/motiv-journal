@@ -1,3 +1,7 @@
+/*
+*= require_tree .
+*/
+
 .top-bar {
   background-color: #F8FFE5
 
@@ -14,7 +18,7 @@
   color: #1B9AAA;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
-  font-size: 50px;
+  font-size: 30px;
   background-color: #F8FFE5;
   margin-top: 12px;
 }
@@ -28,6 +32,7 @@
   background-color: #F8FFE5;
   color: #1B9AAA;
   font-family: 'Montserrat', sans-serif;
+  display: inline;
 }
 
 .entry-response {
@@ -38,13 +43,21 @@
 
 .link {
   background-color: #F8FFE5;
-  color: #EF476F;
+  color: #FFC43D;
   font-family: 'Montserrat', sans-serif;
+  text-align: center;
+
+}
+.link a {
+  text-decoration: none;
+  color: inherit;
+
 }
 
 .top-bar-section {
   position: fixed;
   width: 100%;
+
 }
 
 .right {
@@ -52,19 +65,38 @@
   margin-right: 30px;
 }
 
-.entry-li {
-  list-style: none;
+.entry-li::before {
+  counter-increment: section;
+  content: counter(section);
+  font-family: 'Montserrat', sans-serif;
 }
 
+.entry-title {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  color: #06D6A0;
+  font-size: 70px;
+  background-color: #F8FFE5;
+}
 
+.sign-out {
+  color: #FFC43D;
+}
+.sign-out a {
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  color: inherit;
+}
 
+.form {
+  font-family: 'Montserrat', sans-serif;
+}
 
+.page {
+  background-color: #F8FFE5;
+}
 
-
-
-
-
-
-/* .new-review-form-panel {
-  background-color: #1B9AAA;
-} */
+.ol-entry {
+  list-style: none;
+  counter-reset: section;
+}

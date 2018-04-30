@@ -70,7 +70,7 @@ class NewFormContainer extends Component {
   render() {
     return(
     <div>
-      <h1>{this.state.promptText}</h1>
+      <h1 className = "form">{this.state.promptText}</h1>
       <form className="new-review-form-panel" onSubmit={this.handleEntrySubmit}>
         <fieldset>
           <div className="formFun"></div>
