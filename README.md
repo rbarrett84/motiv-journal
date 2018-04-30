@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+MOTIV-JOURNAL
 
-Things you may want to cover:
+This was my capstone project at Launch Academy.  I designed a motivational journal where a randomized prompt is generated from a Rails backend to a form which was done in React.  Then the user could type in a response to the prompt and then the new entry was posted to the database.  On the index page, a user can see all the entries he/she created.  
 
-* Ruby version
+STEPS TO RUN THE APP
 
-* System dependencies
+1. Git clone the project on to your machine.
 
-* Configuration
+2. Open up the termianl and run the command `npm start` and start the rails server on a different tab with the command `rails s`.  
 
-* Database creation
+3. Go to localhost:3000 in your browser to see the app displayed.
 
-* Database initialization
+4. Create a username and password.
 
-* How to run the test suite
+5. Begin writing entries!
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+6. All tests should be passing at this point!
