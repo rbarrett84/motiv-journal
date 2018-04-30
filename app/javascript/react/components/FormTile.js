@@ -2,7 +2,7 @@ import React from 'react';
 
 const FormField = (props) => {
   return (
-    <label >{props.label}
+    <label>{props.label}
       <textarea
         type='text'
         onChange={props.handleChange}
